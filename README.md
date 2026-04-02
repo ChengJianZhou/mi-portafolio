@@ -31,6 +31,19 @@ src/
 | `hooks/useTheme.js` | Handles theme toggle and saves preference to localStorage |
 | `pages/Home.jsx` | Add new sections here as the portfolio grows |
 
+## i18n (Translations)
+
+Translations are handled with a custom `LangContext` instead of a library like i18next.
+
+**Why:** For a portfolio with 3 languages, a custom context is simpler, has zero dependencies,
+and is easier to understand. i18next would be the right choice for a larger project or a team.
+
+**How to add a new text key:**
+
+1. Open `src/context/LangContext.jsx`
+2. Add the key in all three languages
+3. Use it anywhere with `const { t } = useLang()` → `t('section.key')`
+
 ## Getting Started
 
 ```bash
