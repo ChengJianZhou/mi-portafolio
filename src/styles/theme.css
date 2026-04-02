@@ -1,0 +1,50 @@
+/* ── Modo claro ───────────────────────────── */
+:root,
+[data-theme="light"] {
+  --color-bg:            #f4f2ff;
+  --color-surface:       #ffffff;
+  --color-text:          #1a1025;
+  --color-text-muted:    #6b6080;
+  --color-primary:       #7c3aed;
+  --color-primary-hover: #6d28d9;
+  --color-secondary:     #06b6d4;
+  --color-border:        #ddd6fe;
+
+  --gradient-primary: linear-gradient(135deg, #7c3aed, #06b6d4);
+  --gradient-bg:      radial-gradient(ellipse at 20% 50%, #ede9fe 0%, transparent 60%),
+                      radial-gradient(ellipse at 80% 20%, #cffafe 0%, transparent 50%);
+}
+
+/* ── Modo oscuro ──────────────────────────── */
+[data-theme="dark"] {
+  --color-bg:            #0d0a1a;
+  --color-surface:       #13102a;
+  --color-text:          #f0eeff;
+  --color-text-muted:    #9d8fc4;
+  --color-primary:       #a78bfa;
+  --color-primary-hover: #8b5cf6;
+  --color-secondary:     #22d3ee;
+  --color-border:        #2e2150;
+
+  --gradient-primary: linear-gradient(135deg, #a78bfa, #22d3ee);
+  --gradient-bg:      radial-gradient(ellipse at 20% 50%, #1e1040 0%, transparent 60%),
+                      radial-gradient(ellipse at 80% 20%, #051d2e 0%, transparent 50%);
+}
+
+/* ── Respeta preferencia del sistema si no hay toggle activo ── */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --color-bg:            #0d0a1a;
+    --color-surface:       #13102a;
+    --color-text:          #f0eeff;
+    --color-text-muted:    #9d8fc4;
+    --color-primary:       #a78bfa;
+    --color-primary-hover: #8b5cf6;
+    --color-secondary:     #22d3ee;
+    --color-border:        #2e2150;
+
+    --gradient-primary: linear-gradient(135deg, #a78bfa, #22d3ee);
+    --gradient-bg:      radial-gradient(ellipse at 20% 50%, #1e1040 0%, transparent 60%),
+                        radial-gradient(ellipse at 80% 20%, #051d2e 0%, transparent 50%);
+  }
+}

@@ -1,29 +1,20 @@
-import { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { LangProvider } from './context/LangContext'
 import Home from './pages/Home'
+import Navbar from './components/Navbar'
+import useTheme from './hooks/useTheme'
 
 export default function App() {
-  const [theme, setTheme] = useState(() => {
-    const saved = localStorage.getItem('theme')
-    if (saved) return saved
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-  })
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme)
-  }, [theme])
-
-  const toggleTheme = () => setTheme(t => {
-    const next = t === 'dark' ? 'light' : 'dark'
-    localStorage.setItem('theme', next)
-    return next
-  })
+  const { theme, toggleTheme } = useTheme()
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </BrowserRouter>
+    <LangProvider>
+      <BrowserRouter>
+        <Navbar theme={theme} toggleTheme={toggleTheme} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+    </LangProvider>
   )
 }

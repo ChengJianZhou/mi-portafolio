@@ -1,0 +1,38 @@
+/* Elimina márgenes y box-sizing inconsistentes entre navegadores */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+/* Fondo con gradiente fijo — no se mueve al hacer scroll */
+body {
+  font-family: var(--font-body, sans-serif);
+  font-size: 1rem;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  background-image: var(--gradient-bg);
+  background-attachment: fixed;
+  min-height: 100dvh;
+  line-height: 1.6;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+/* Los media se comportan como bloque por defecto */
+img, video, svg { display: block; max-width: 100%; height: auto; }
+
+/* Los inputs heredan la fuente del body */
+input, button, textarea, select { font: inherit; color: inherit; }
+
+/* Anillo de foco accesible usando el color primario */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
