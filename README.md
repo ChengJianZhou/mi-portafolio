@@ -1,16 +1,44 @@
-# React + Vite
+# mi-portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio built with React + Vite. Supports light/dark mode and three languages (EN, ES, ZH).
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React 19** + **Vite 6**
+- **React Router DOM 7** — page routing
+- **CSS Variables** — design tokens, no CSS framework
 
-## React Compiler
+## Project Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```
+src/
+├── styles/          # Global CSS (fonts, theme, reset, buttons)
+├── context/
+│   └── LangContext.jsx   # All translations + useLang() hook — edit here to add/change texts
+├── hooks/
+│   └── useTheme.js       # Light/dark mode logic
+├── pages/           # One file per route (Home, etc.)
+├── components/      # UI pieces (Navbar, Hero, etc.)
+├── App.jsx          # Providers + router setup
+└── main.jsx         # Entry point — imports global styles
+```
 
-## Expanding the ESLint configuration
+## Key Files
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| File | What it does |
+|---|---|
+| `context/LangContext.jsx` | All translations for EN, ES and ZH. Add new text keys here |
+| `hooks/useTheme.js` | Handles theme toggle and saves preference to localStorage |
+| `pages/Home.jsx` | Add new sections here as the portfolio grows |
+
+## Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+## License
+
+Feel free to use this project as inspiration for your own portfolio.  
+If you do, a credit or mention to [Marcos Zhou](https://github.com/ChengJianZhou) would be appreciated 🙂
