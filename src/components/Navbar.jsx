@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import { useLang } from '../context/LangContext'
 import '../styles/Navbar.css'
 
@@ -8,23 +9,27 @@ const LANGS = [
   { code: 'zh', label: '中文', flag: '🇨🇳' },
 ]
 
+// Helper para aplicar la clase activa
+const navLinkClass = ({ isActive }) =>
+  `navbar__link ${isActive ? 'navbar__link--active' : ''}`
+
 export default function Navbar({ theme, toggleTheme }) {
   const { lang, setLang, t } = useLang()
   const [langOpen, setLangOpen] = useState(false)
 
   return (
     <header className="navbar">
-      {/* Logo */}
-      <a href="/" className="navbar__logo">
+      {/* Logo — to="/" con end para que solo sea activo en la ruta exacta */}
+      <NavLink to="/" className={navLinkClass} end>
         MZ<span className="navbar__logo-dot">.</span>
-      </a>
+      </NavLink>
 
       {/* Links */}
       <nav className="navbar__links">
-        <a href="#hero"     className="navbar__link">{t('nav.home')}</a>
-        <a href="#projects" className="navbar__link">{t('nav.projects')}</a>
-        <a href="#about"    className="navbar__link">{t('nav.about')}</a>
-        <a href="#contact"  className="navbar__link">{t('nav.contact')}</a>
+        <NavLink to="/"         className={navLinkClass} end>{t('nav.home')}</NavLink>
+        <NavLink to="/projects" className={navLinkClass}>{t('nav.projects')}</NavLink>
+        <NavLink to="/about"    className={navLinkClass}>{t('nav.about')}</NavLink>
+        <NavLink to="/contact"  className={navLinkClass}>{t('nav.contact')}</NavLink>
       </nav>
 
       {/* Controles */}

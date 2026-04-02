@@ -41,6 +41,11 @@
   transition: color 180ms ease;
 }
 
+.navbar__link--active {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
 .navbar__link:hover { color: var(--color-primary); }
 
 .navbar__controls {
