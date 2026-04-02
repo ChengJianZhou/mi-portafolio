@@ -1,0 +1,58 @@
+.hero {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.hero__content {
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+.hero__title {
+  font-size: clamp(3rem, 7vw, 8rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+
+.hero__role {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 400;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.hero__desc {
+  font-size: 1rem;
+  color: #888;
+  max-width: 50ch;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.hero__cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero__cta a {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.hero__cta a:first-child {
+  background: #01696f;
+  color: white;
+}
+
+.hero__cta a:last-child {
+  border: 1px solid #ccc;
+  color: inherit;
+}
