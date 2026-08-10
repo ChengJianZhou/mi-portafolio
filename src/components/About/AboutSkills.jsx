@@ -6,7 +6,7 @@ function SkillGroup({ label, items }) {
       <h4 className="skills__group-label">{label}</h4>
       <div className="skills__items">
         {items.map(item => (
-          <span key={item} className="skills__tag">{item}</span>
+          <span key={item} className="skills__tag">| {item} |</span>
         ))}
       </div>
     </div>

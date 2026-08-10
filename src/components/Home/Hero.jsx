@@ -1,5 +1,5 @@
-import { useLang } from '../context/LangContext'
-import '../styles/Hero.css'
+import { useLang } from '../../context/LangContext'
+import '../../styles/Hero.css'
 
 export function Hero() {
   const { t } = useLang()

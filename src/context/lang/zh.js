@@ -14,26 +14,47 @@ export const zh = {
     cta_secondary: '联系我',
   },
   about: {
-    title:          '关于我',
-    bio_1:          '我是马德里理工大学（UPM）计算机工程专业的学生，热衷于 Web 开发和底层系统。业余时间喜欢研究 Custom ROM、将 Linux 移植到 Android 设备和 ARM 硬件，以及折腾基础设施。',
-    bio_2:          '我正在寻找能让我成长为 Web 开发者或参与操作系统与系统软件项目的机会。',
-    read_more:      '了解更多',
+    title: '关于我',
+    bio_1: '我是马德里理工大学（UPM）计算机工程高级技术学院（ETSIINF）的学生，同时也是一名初级全栈 / DevOps 开发者，在 Java、Spring Boot、React 和 Docker 方面有实践经验。我设计面向微服务架构的 RESTful API，使用 Nginx 作为反向代理管理容器化部署，并在 Linux 环境中进行基础设施管理。',
+    bio_2: '目前我也在探索生成式 AI 的部署：我构建了一个完整的 RAG 流程（分块、嵌入、向量数据库，以及通过 Ollama 部署的本地大语言模型）。我正在寻找实习或初级职位机会，以便继续成长为一名开发者。',
+    read_more: '了解更多',
     timeline_title: '经历与教育',
     timeline: [
-      { year: '2023 – 至今', title: '计算机工程 — UPM',        desc: '就读于马德里理工大学（ETSISI）本科。' },
-      { year: '2024 – 至今', title: 'TIC 副代表 — 学生代表团', desc: '担任学校学生代表团技术负责人，协调超过 10 人的团队。' },
-      { year: '2024',        title: '学术大会网站与票务系统',   desc: '开发了完整的大会网站：票务扫描系统、对接大学 API 进行身份和学分管理、演讲/嘉宾/赞助商后端。之后用 React 完全重构了前端。' },
-      { year: '2024',        title: '代表团基础设施',           desc: '搭建并维护代表团服务：WordPress 网站、Vaultwarden 密码管理及内部工具。' },
-      { year: '2024',        title: '新生入学宣讲',             desc: '向新生介绍学生代表团及其技术项目。' },
+      {
+        year: '2023 – 预计 2027',
+        title: '计算机工程 — ETSIINF, UPM',
+        desc: '就读于马德里理工大学计算机工程高级技术学院（ETSIINF）本科，目前为最后一学年（大四）。',
+      },
+      {
+        year: '2023 – 至今',
+        title: 'IT 学生代表团 — ETSIINF（UPM）',
+        desc: '自 2023 年起担任学生代表团成员，并于 2025 年被任命为 IT 代表。负责管理学校的 VPS 服务器（Docker 容器生命周期管理、流量高峰期资源扩容），同时通过 Docker 和 Nginx 部署并维护代表团的 WordPress 网站及 Vaultwarden 密码管理工具，负责 SSH 远程访问、Git 版本控制及定期备份。',
+      },
+      {
+        year: '2025 – 2026 届',
+        title: '技术团队负责人 — Tryit 大会（UPM）',
+        desc: '连续两届采用 Scrum 方法带领最多 10 人的团队。使用 Vue、React、TypeScript 开发大会官网前端，使用 Python、Django 开发后端，实现了参会者敏感信息管理与 ECTS 学分自动分配系统、基于二维码的入场验证系统，并与 Inetum 公司合作为其企业团建活动开发定制看板。',
+      },
     ],
     skills_title: '技能',
     skills: {
-      frontend: { label: '前端',          items: ['HTML', 'CSS', 'JavaScript', 'React', 'Vue', 'TypeScript'] },
-      backend:  { label: '后端',          items: ['Python', 'Java', 'C', 'SQL'] },
-      devops:   { label: 'DevOps 与工具', items: ['Docker', 'Nginx', 'Linux', 'Git'] },
-      hardware: { label: '硬件与移动端',  items: ['Fastboot', 'ADB', 'Bootloaders', 'Custom ROM', '设备维修'] },
+      frontend: { label: '前端', items: ['React', 'Vue', 'TypeScript', 'JavaScript'] },
+      backend:  { label: '后端', items: ['Java', 'Spring Boot', 'Python', 'Django', 'Node.js', 'REST'] },
+      ai:       { label: 'AI / 机器学习', items: ['RAG', 'LangChain', 'FastEmbed', 'Qdrant', 'Ollama', 'FastAPI'] },
+      devops:   { label: 'DevOps 与基础设施', items: ['Docker', 'Docker Compose', 'Nginx', 'Linux', 'Git', 'SSH', 'Cloudflare'] },
     },
-    personal_title: '代码之外',
-    personal:       '不学习或写代码的时候，我会深入研究 Android 内部机制——刷机、研究 Bootloader，并朝着我的个人目标努力：为 Android 设备构建一个基于 Debian 的发行版。我还在家里自托管多个服务，享受深入理解操作系统工作原理的过程。',
+    personal_title: '其他兴趣',
+    personal: '不写代码的时候，我喜欢研究微控制器编程（Arduino、ESP32），并尝试移植另类的移动操作系统——我成功将 postmarketOS（Linux）稳定移植到了一台 Android 平板电脑上。我还在家庭服务器上使用 Docker 自托管多个服务。',
+
+    languages_title: '语言',
+    languages: [
+      { name: '西班牙语', level: '母语' },
+      { name: '中文（普通话）', level: '母语' },
+      { name: '英语', level: 'B2' },
+    ],
+
+    availability_title: '可参与情况',
+    availability: '可接受实习或初级职位，工作方式可现场、混合或远程。与我目前在 UPM 的学业兼容（预计毕业时间：2027 年 6 月）。',
+    cv_download: '下载简历',
   }
 }

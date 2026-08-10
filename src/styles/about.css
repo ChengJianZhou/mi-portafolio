@@ -140,6 +140,55 @@
   gap: 0.5rem;
 }
 
+/* ── AboutAvailability (idiomas + disponibilidad + CV) ── */
+.about__availability {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.availability__block {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.languages__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  list-style: none;
+}
+
+.languages__item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0.85rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+}
+
+.languages__name {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.languages__level {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+
+.availability__cv-btn {
+  align-self: flex-start;
+  margin-top: 0.25rem;
+}
+
 /* ── AboutPersonal ── */
 .about__personal {
   color: var(--color-text-muted);
@@ -165,5 +214,14 @@
 
   .skills {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .about__availability {
+    grid-template-columns: 1fr;
+  }
+
+  .availability__cv-btn {
+    align-self: stretch;
+    text-align: center;
   }
 }

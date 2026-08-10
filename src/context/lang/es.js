@@ -14,26 +14,47 @@ export const es = {
     cta_secondary: 'Contáctame',
   },
   about: {
-    title:          'Sobre mí',
-    bio_1:          'Soy estudiante de Ingeniería Informática en la UPM (Madrid), apasionado por el desarrollo web y los sistemas de bajo nivel. Dedico gran parte de mi tiempo libre a investigar custom ROMs, portar Linux a dispositivos Android y hardware ARM, y cacharrear con infraestructura.',
-    bio_2:          'Busco oportunidades donde pueda crecer como desarrollador web o contribuir a proyectos de sistemas operativos y software de sistemas.',
-    read_more:      'Más sobre mí',
+    title: 'Sobre mí',
+    bio_1: 'Soy estudiante de Ingeniería Informática en la Escuela Técnica Superior de Ingenieros Informáticos (ETSIINF), Universidad Politécnica de Madrid (UPM), y desarrollador full-stack/DevOps junior con experiencia práctica en Java, Spring Boot, React y Docker. Diseño APIs RESTful orientadas a microservicios, gestiono despliegues con contenedores y reverse proxy con Nginx, y administro infraestructura en entornos Linux.',
+    bio_2: 'Actualmente exploro también el despliegue de sistemas de IA generativa: he construido un pipeline RAG completo (chunking, embeddings, base de datos vectorial y LLMs locales con Ollama). Busco oportunidades de prácticas o un puesto junior donde pueda seguir creciendo como desarrollador.',
+    read_more: 'Más sobre mí',
     timeline_title: 'Experiencia y formación',
     timeline: [
-      { year: '2023 – presente', title: 'Ingeniería Informática — UPM',             desc: 'Grado en la Universidad Politécnica de Madrid (ETSISI).' },
-      { year: '2024 – presente', title: 'Subdelegado TIC — Delegación de Alumnos', desc: 'Parte de la delegación de alumnos de mi escuela, liderando el área tecnológica. Coordinación de equipos de más de 10 personas.' },
-      { year: '2024',            title: 'Web del Congreso y Sistema de Entradas',   desc: 'Desarrollé la web completa del congreso: sistema de escaneo de entradas, integración con la API de la universidad para gestión de DNIs y créditos, backend para charlas, ponentes, imágenes y patrocinadores. Posteriormente rehíce todo el frontend desde cero con React.' },
-      { year: '2024',            title: 'Infraestructura de la Delegación',        desc: 'Configuración y mantenimiento de los servicios de la delegación: web con WordPress, gestión de contraseñas con Vaultwarden y herramientas internas.' },
-      { year: '2024',            title: 'Charla de Presentación para Nuevos Alumnos', desc: 'Presenté la delegación de alumnos y sus proyectos tecnológicos a los estudiantes de nuevo ingreso.' },
+      {
+        year: '2023 – previsión 2027',
+        title: 'Ingeniería Informática — ETSIINF, UPM',
+        desc: 'Grado en la Escuela Técnica Superior de Ingenieros Informáticos (ETSIINF), Universidad Politécnica de Madrid. Último año de carrera (4º curso).',
+      },
+      {
+        year: '2023 – Actualidad',
+        title: 'Delegación de Alumnos TIC — ETSIINF (UPM)',
+        desc: 'Miembro de la Delegación de Alumnos desde 2023 y en 2025 fui nombrado Subdelegado TIC. Administro un servidor VPS institucional (ciclo de vida de contenedores Docker, escalado de recursos en picos de tráfico), además despliego mantengo la web de la delegación (WordPress) y el gestor de contraseñas Vaultwarden vía Docker con Nginx, gestiono acceso SSH, control de versiones con Git junto copias de seguridad periódicas.',
+      },
+      {
+        year: 'Ediciones 2025 – 2026',
+        title: 'Coordinador del equipo web — Congreso Tryit (UPM)',
+        desc: 'Lideré un equipo de hasta 10 estudiantes aplicando Scrum durante dos ediciones consecutivas. Desarrollé el frontend (Vue, React, TypeScript) y el backend (Python, Django) de la web oficial del congreso, implementé la gestión de datos sensibles de asistentes y la asignación automática de créditos ECTS, un sistema de validación de acceso por QR, y coordiné con Inetum el desarrollo de un dashboard a medida para su gincana corporativa.',
+      },
     ],
     skills_title: 'Habilidades',
     skills: {
-      frontend: { label: 'Frontend',              items: ['HTML', 'CSS', 'JavaScript', 'React', 'Vue', 'TypeScript'] },
-      backend:  { label: 'Backend',               items: ['Python', 'Java', 'C', 'SQL'] },
-      devops:   { label: 'DevOps y Herramientas', items: ['Docker', 'Nginx', 'Linux', 'Git'] },
-      hardware: { label: 'Hardware y Móvil',      items: ['Fastboot', 'ADB', 'Bootloaders', 'Custom ROMs', 'Reparación de dispositivos'] },
+      frontend: { label: 'Frontend', items: ['React', 'Vue', 'TypeScript', 'JavaScript'] },
+      backend:  { label: 'Backend', items: ['Java', 'Spring Boot', 'Python', 'Django', 'Node.js', 'REST'] },
+      ai:       { label: 'IA / Machine Learning', items: ['RAG', 'LangChain', 'FastEmbed', 'Qdrant', 'Ollama', 'FastAPI'] },
+      devops:   { label: 'DevOps e Infraestructura', items: ['Docker', 'Docker Compose', 'Nginx', 'Linux', 'Git', 'SSH', 'Cloudflare'] },
     },
-    personal_title: 'Más allá del código',
-    personal:       'Cuando no estoy estudiando o construyendo cosas para la web, me adentro en las entrañas de Android: flasheo custom ROMs, estudio bootloaders y trabajo en mi objetivo personal de crear una distribución basada en Debian para dispositivos Android. También tengo un servidor en casa con varios servicios y disfruto entendiendo a fondo cómo funcionan los sistemas operativos.',
+    personal_title: 'Otros intereses',
+    personal: 'Fuera del código, me interesa la programación de microcontroladores (Arduino, ESP32) y experimentar con sistemas operativos móviles alternativos — porté de forma estable postmarketOS (Linux) a una tablet Android. También administro varios servicios en un servidor casero con Docker.',
+
+    languages_title: 'Idiomas',
+    languages: [
+      { name: 'Español', level: 'Nativo' },
+      { name: 'Chino mandarín', level: 'Nativo' },
+      { name: 'Inglés', level: 'B2' },
+    ],
+
+    availability_title: 'Disponibilidad',
+    availability: 'Disponible para prácticas o un puesto junior, en modalidad presencial, híbrida o remota. Compatible con mis estudios actuales en la UPM (previsión de finalización: junio 2027).',
+    cv_download: 'Descargar CV',
   }
 }

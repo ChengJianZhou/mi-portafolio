@@ -9,19 +9,26 @@ Portafolio como página estática, sin backend propio. Foco 100% en frontend.
 - [x] Navbar
 - [x] Hero section
 - [x] About page (Hero, Timeline, Skills, Personal)
+- [x] Reescribir bio, timeline y skills de About con info real de los CVs (fechas y datos corregidos)
+- [x] Corregir nombre del centro (ETSIINF, no ETSISI) y timeline por ediciones/años según corresponda
+- [x] Añadir grupo de skills de IA/Machine Learning (RAG, LangChain, Qdrant, Ollama, FastAPI)
+- [x] Mover intereses de Hardware/ROMs/Arduino a la sección Personal
+- [x] Traducir todo el contenido corregido a `en.js` y `zh.js`
+- [x] Añadir sección de Idiomas y Disponibilidad en About (`AboutAvailability.jsx`) con botón de descarga de CV
 
 ---
 
-## ✍️ Prioridad 1 — Revisar y corregir contenido
+## ✍️ About — pendientes de contenido
 
-El texto actual está mal redactado / con información incorrecta o desactualizada. Antes de añadir nada nuevo, limpiar lo que ya existe.
-
-- [ ] Reescribir textos de `context/lang/es.js` (idioma base) — bio, timeline, skills, personal
-- [ ] Revisar que `en.js` y `zh.js` sean traducciones fieles del texto corregido en `es.js`, no textos inventados aparte
-- [ ] Actualizar timeline con experiencia real y actual (revisar fechas, títulos y descripciones)
-- [ ] Actualizar sección de skills con el stack real actual (Spring Boot, Docker, PostgreSQL, etc. si aplica)
+- [ ] Crear sección **Motivaciones** en About (nuevo componente `AboutMotivations.jsx` o similar)
+- [ ] Mover a Motivaciones el texto: "Actualmente exploro también el despliegue de sistemas de IA generativa: he construido un pipeline RAG completo (chunking, embeddings, base de datos vectorial y LLMs locales con Ollama). Busco oportunidades de prácticas o un puesto junior donde pueda seguir creciendo como desarrollador." (hoy vive dentro de `bio_2`, hay que sacarlo de la bio)
+- [ ] Separar **Idiomas** y **Disponibilidad** en dos secciones independientes (hoy están juntas en un mismo `AboutAvailability` con dos bloques en grid — separarlas en dos `<section className="about__section">` propias, una detrás de otra)
+- [ ] Añadir a Disponibilidad una frase tipo "Aquí tienes mi CV para descargar" justo antes/junto al botón de descarga
+- [ ] Actualizar `es.js` / `en.js` / `zh.js` con las nuevas claves (`motivations_title`, `motivations`, frase de CV) y quitar el texto movido de `bio_2`
+- [ ] Actualizar `about.css`: separar estilos de `.about__availability` (grid de dos bloques) en reglas independientes para idiomas y disponibilidad, y añadir estilos del nuevo bloque de motivaciones
 - [ ] Sustituir el placeholder de avatar (iniciales "MZ") por foto real o ilustración definitiva
 - [ ] Revisar tono y coherencia entre secciones (que no suene a plantilla genérica)
+- [ ] Subir el PDF real del CV a `public/cv/marcos-zhou-cv.pdf` (el botón de descarga ya apunta ahí pero el archivo no existe todavía)
 
 ---
 
@@ -39,7 +46,7 @@ El texto actual está mal redactado / con información incorrecta o desactualiza
 
 Se reutiliza el proyecto RAG propio ya existente — el portafolio solo consume esa API, sin lógica adicional de backend aquí.
 
-- [ ] Preparar/actualizar el contenido base que indexa el RAG (bio, timeline, skills, proyectos corregidos)
+- [ ] Preparar/actualizar el contenido base que indexa el RAG (bio, timeline, skills, motivaciones, proyectos corregidos)
 - [ ] Construir el componente de chat (widget flotante) en React
 - [ ] Conectar el widget a la API del proyecto RAG (fetch simple desde el frontend)
 - [ ] Manejar estados de carga / error de la llamada a la API
@@ -51,7 +58,6 @@ Se reutiliza el proyecto RAG propio ya existente — el portafolio solo consume 
 
 - [ ] Animaciones de scroll al entrar secciones en el viewport
 - [ ] Filtro de proyectos por tecnología
-- [ ] Botón de descarga de CV (PDF)
 - [ ] Página 404
 - [ ] Favicon y título de página por ruta
 - [ ] Meta tags Open Graph (preview al compartir en redes)

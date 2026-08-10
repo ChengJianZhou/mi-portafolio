@@ -14,26 +14,47 @@ export const en = {
     cta_secondary: 'Contact me',
   },
   about: {
-    title:          'About me',
-    bio_1:          'I\'m a Computer Engineering student at UPM (Madrid) with a passion for web development and low-level systems. I spend a lot of my free time researching custom ROMs, porting Linux to Android devices and ARM hardware, and tinkering with infrastructure.',
-    bio_2:          'I\'m looking for opportunities where I can grow as a web developer or contribute to operating system and systems software projects.',
-    read_more:      'More about me',
+    title: 'About me',
+    bio_1: 'I\'m a Computer Engineering student at the Higher Technical School of Computer Engineers (ETSIINF), Universidad Politécnica de Madrid (UPM), and a junior full-stack/DevOps developer with hands-on experience in Java, Spring Boot, React and Docker. I design microservice-oriented RESTful APIs, manage container deployments with Nginx as a reverse proxy, and administer infrastructure on Linux environments.',
+    bio_2: 'I\'m also currently exploring generative AI deployment: I\'ve built a full RAG pipeline (chunking, embeddings, vector database and local LLMs served with Ollama). I\'m looking for internship or junior opportunities where I can keep growing as a developer.',
+    read_more: 'More about me',
     timeline_title: 'Experience & Education',
     timeline: [
-      { year: '2023 – present', title: 'Computer Engineering — UPM',           desc: 'Bachelor\'s degree at Universidad Politécnica de Madrid (ETSISI).' },
-      { year: '2024 – present', title: 'TIC Subdelegado — Student Delegation', desc: 'Part of the student delegation at my school, leading the technology area. Coordinating teams of 10+ people.' },
-      { year: '2024',           title: 'Congress Website & Ticket System',      desc: 'Built the full congress website: ticket scanning system, university API integration for ID and credit management, backend for talks, speakers, images and sponsors. Then rebuilt the entire frontend from scratch with React.' },
-      { year: '2024',           title: 'Delegation Infrastructure',            desc: 'Set up and maintain the delegation\'s services: WordPress site, password management with Vaultwarden, and internal tooling.' },
-      { year: '2024',           title: 'Freshman Orientation Talk',            desc: 'Presented the student delegation and its tech projects to incoming students.' },
+      {
+        year: '2023 – expected 2027',
+        title: 'Computer Engineering — ETSIINF, UPM',
+        desc: 'Bachelor\'s degree at the Higher Technical School of Computer Engineers (ETSIINF), Universidad Politécnica de Madrid. Final year of the degree (4th year).',
+      },
+      {
+        year: '2023 – Present',
+        title: 'IT Student Delegation — ETSIINF (UPM)',
+        desc: 'Member of the Student Delegation since 2023, and appointed IT Delegate in 2025. I administer an institutional VPS (Docker container lifecycle, resource scaling during traffic spikes), and I also deploy and maintain the delegation\'s WordPress site and the Vaultwarden password manager via Docker with Nginx, manage SSH access, Git version control and periodic backups.',
+      },
+      {
+        year: '2025 – 2026 editions',
+        title: 'Web Team Coordinator — Tryit Congress (UPM)',
+        desc: 'Led a team of up to 10 students applying Scrum across two consecutive editions. Built the frontend (Vue, React, TypeScript) and backend (Python, Django) of the official congress website, implemented sensitive attendee data management and automatic ECTS credit allocation, a QR-based access validation system, and coordinated with Inetum on a custom dashboard for their corporate team-building event.',
+      },
     ],
     skills_title: 'Skills',
     skills: {
-      frontend: { label: 'Frontend',          items: ['HTML', 'CSS', 'JavaScript', 'React', 'Vue', 'TypeScript'] },
-      backend:  { label: 'Backend',           items: ['Python', 'Java', 'C', 'SQL'] },
-      devops:   { label: 'DevOps & Tools',    items: ['Docker', 'Nginx', 'Linux', 'Git'] },
-      hardware: { label: 'Hardware & Mobile', items: ['Fastboot', 'ADB', 'Bootloaders', 'Custom ROMs', 'Device repair'] },
+      frontend: { label: 'Frontend', items: ['React', 'Vue', 'TypeScript', 'JavaScript'] },
+      backend:  { label: 'Backend', items: ['Java', 'Spring Boot', 'Python', 'Django', 'Node.js', 'REST'] },
+      ai:       { label: 'AI / Machine Learning', items: ['RAG', 'LangChain', 'FastEmbed', 'Qdrant', 'Ollama', 'FastAPI'] },
+      devops:   { label: 'DevOps & Infrastructure', items: ['Docker', 'Docker Compose', 'Nginx', 'Linux', 'Git', 'SSH', 'Cloudflare'] },
     },
-    personal_title: 'Beyond the code',
-    personal:       'When I\'m not studying or building things for the web, I\'m exploring the Android internals — flashing custom ROMs, studying bootloaders, and working toward my personal goal of building a Debian-based distribution for Android devices. I also self-host several services at home and enjoy diving deep into how operating systems work.',
+    personal_title: 'Other interests',
+    personal: 'Outside of code, I\'m into microcontroller programming (Arduino, ESP32) and experimenting with alternative mobile operating systems — I ported postmarketOS (Linux) to an Android tablet with a stable result. I also self-host several services on a home server with Docker.',
+
+    languages_title: 'Languages',
+    languages: [
+      { name: 'Spanish', level: 'Native' },
+      { name: 'Mandarin Chinese', level: 'Native' },
+      { name: 'English', level: 'B2' },
+    ],
+
+    availability_title: 'Availability',
+    availability: 'Available for internships or a junior position, on-site, hybrid or remote. Compatible with my current studies at UPM (expected graduation: June 2027).',
+    cv_download: 'Download CV',
   }
 }
