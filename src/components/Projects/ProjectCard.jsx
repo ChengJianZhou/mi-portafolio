@@ -1,23 +1,26 @@
-// src/components/Projects/ProjectCard.jsx
 import { Link } from 'react-router-dom'
+import { useLang } from '../../context/LangContext'
 import { ProjectMedia } from './ProjectMedia'
 
 export function ProjectCard({ project }) {
+  const { lang } = useLang()
+  const content = project.content[lang] ?? project.content.en
+
   return (
     <Link to={`/projects/${project.slug}`} className="project-card">
       <div className="project-card__media">
-        <ProjectMedia cover={project.cover} alt={project.title} />
+        <ProjectMedia cover={project.cover} alt={content.title} />
       </div>
 
       <div className="project-card__body">
-        <h3 className="project-card__title">{project.title}</h3>
-        <p className="project-card__summary">{project.summary}</p>
+        <h3 className="project-card__title">{content.title}</h3>
+        <p className="project-card__summary">{content.summary}</p>
 
         <div className="project-card__stack">
           {project.stack.map(tech => (
             <span key={tech} className="project-card__tag">{tech}</span>
           ))}
-        </div> 
+        </div>
       </div>
     </Link>
   )
