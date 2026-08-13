@@ -1,4 +1,5 @@
 import { useLang } from '../../context/LangContext'
+import cvFile from '../../assets/cv/curriculum Chengjian Zhou.pdf'
 
 export function AboutAvailability() {
   const { t } = useLang()
@@ -10,7 +11,7 @@ export function AboutAvailability() {
       <p className="about__personal">{about.availability}</p>
       {/* Reemplaza el href por la ruta real del PDF subido a public/cv/ */}
       <a
-        href="../../src/assets/cv/curriculum Chengjian Zhou.pdf"
+        href={cvFile}
         download
         className="btn btn-solid availability__cv-btn"
       >
