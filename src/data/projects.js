@@ -15,10 +15,10 @@ export const projects = [
     stack: ['Java', 'Spring Boot', 'PostgreSQL', 'Docker', 'React'],
     cover: {
       type: 'image', // cambia a 'gif' o 'video' cuando tengas la demo grabada
-      src: '/projects/restaurant-management-cover.png',
+      src: 'src/assets/projects/Restaurant/Restaurant.png',
     },
     links: {
-      github: 'https://github.com/tu-usuario/restaurant-management-system',
+      github: 'https://github.com/ChengJianZhou/Restaurant-Backend',
       demo: '',
     },
   },
