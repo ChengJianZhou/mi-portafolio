@@ -1,8 +1,9 @@
 import { useLang } from '../../context/LangContext'
+import { about } from '../../data/about'
 
 export function AboutHero() {
-  const { t } = useLang()
-  const about = t('about')
+  const { lang } = useLang()
+  const a = about[lang] ?? about.en
 
   return (
     <section className="about__hero">
@@ -11,9 +12,9 @@ export function AboutHero() {
         <span className="about__avatar-initials">MZ</span>
       </div>
       <div className="about__intro">
-        <h1 className="about__title">{about.title}</h1>
-        <p>{about.bio_1}</p>
-        <p>{about.bio_2}</p>
+        <h1 className="about__title">{a.title}</h1>
+        <p>{a.bio_1}</p>
+        <p>{a.bio_2}</p>
       </div>
     </section>
   )

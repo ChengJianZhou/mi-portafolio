@@ -1,4 +1,5 @@
 import { useLang } from '../../context/LangContext'
+import { about } from '../../data/about'
 
 function TimelineEntry({ year, title, desc }) {
   return (
@@ -13,14 +14,14 @@ function TimelineEntry({ year, title, desc }) {
 }
 
 export function AboutTimeline() {
-  const { t } = useLang()
-  const about = t('about')
+  const { lang } = useLang()
+  const a = about[lang] ?? about.en
 
   return (
     <section className="about__section">
-      <h2 className="about__section-title">{about.timeline_title}</h2>
+      <h2 className="about__section-title">{a.timeline_title}</h2>
       <div className="timeline">
-        {about.timeline.map((entry, i) => (
+        {a.timeline.map((entry, i) => (
           <TimelineEntry key={i} {...entry} />
         ))}
       </div>

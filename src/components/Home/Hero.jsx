@@ -1,8 +1,10 @@
 import { useLang } from '../../context/LangContext'
+import { home } from '../../data/home'
 import '../../styles/Hero.css'
 
 export function Hero() {
-  const { t } = useLang()
+  const { lang } = useLang()
+  const h = home[lang] ?? home.en
 
   return (
     <section id="hero" className="hero">
@@ -11,23 +13,23 @@ export function Hero() {
       <div className="glow-circle glow-circle--cyan" />
 
       <div className="hero__content">
-        <span className="hero__badge">✦ {t('hero.badge')}</span>
+        <span className="hero__badge">{h.badge}</span>
 
         <h1 className="hero__title">
-          {t('hero.title').split('Marcos Zhou')[0]}
+          {h.title.split('Marcos Zhou')[0]}
           <span className="hero__name">Marcos Zhou</span>
         </h1>
 
-        <p className="hero__role">{t('hero.role')}</p>
-        <p className="hero__desc">{t('hero.desc')}</p>
+        <p className="hero__role">{h.role}</p>
+        <p className="hero__desc">{h.desc}</p>
 
         <div className="hero__cta">
-          <button className="btn btn-solid">{t('hero.cta_primary')}</button>
-          <button className="btn btn-outline">{t('hero.cta_secondary')}</button>
+          <button className="btn btn-solid">{h.cta_primary}</button>
+          <button className="btn btn-outline">{h.cta_secondary}</button>
         </div>
 
         <div className="hero__stack">
-          {['React', 'Python', 'Docker', 'Linux'].map(tech => (
+          {h.stack.map(tech => (
             <span key={tech}>{tech}</span>
           ))}
         </div>

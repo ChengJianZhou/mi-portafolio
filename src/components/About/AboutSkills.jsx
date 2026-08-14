@@ -1,4 +1,5 @@
 import { useLang } from '../../context/LangContext'
+import { about } from '../../data/about'
 
 function SkillGroup({ label, items }) {
   return (
@@ -14,14 +15,14 @@ function SkillGroup({ label, items }) {
 }
 
 export function AboutSkills() {
-  const { t } = useLang()
-  const about = t('about')
+  const { lang } = useLang()
+  const a = about[lang] ?? about.en
 
   return (
     <section className="about__section">
-      <h2 className="about__section-title">{about.skills_title}</h2>
+      <h2 className="about__section-title">{a.skills_title}</h2>
       <div className="skills">
-        {Object.values(about.skills).map(group => (
+        {Object.values(a.skills).map(group => (
           <SkillGroup key={group.label} {...group} />
         ))}
       </div>
