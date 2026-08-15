@@ -1,0 +1,12 @@
+services:
+  portfolio:
+    build: .                    # Construye la imagen usando el Dockerfile de esta carpeta
+    container_name: portfolio   # Nombre del contenedor (Nginx lo usa para encontrarlo)
+    restart: unless-stopped     # Se reinicia solo si el servidor se reinicia
+
+    networks:
+      - proxy                    # Conectado a la red "webs" donde también está Nginx
+
+networks:
+  proxy:
+    external: true              # La red ya existe, Docker no la crea, solo se conecta
