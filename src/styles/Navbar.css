@@ -1,6 +1,8 @@
 .navbar {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   display: flex;
   align-items: center;
@@ -46,7 +48,9 @@
   font-weight: 600;
 }
 
-.navbar__link:hover { color: var(--color-primary); }
+.navbar__link:hover {
+  color: var(--color-primary);
+}
 
 .navbar__controls {
   display: flex;
@@ -54,24 +58,134 @@
   gap: 0.75rem;
 }
 
+/* ── Toggle de tema — cross-fade animado entre Sun y Moon ── */
 .navbar__theme-btn {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 8px;
-  padding: 0.4rem 0.6rem;
-  font-size: 1rem;
   cursor: pointer;
   transition: border-color 180ms ease;
 }
 
-.navbar__theme-btn:hover { border-color: var(--color-primary); }
+.navbar__theme-btn:hover {
+  border-color: var(--color-primary);
+}
 
-.lang-selector { position: relative; }
+.theme-icon-swap {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+}
+
+.theme-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--color-primary);
+  opacity: 0;
+  transform: scale(0.5) rotate(-90deg);
+  transition: opacity 250ms ease, transform 250ms ease;
+}
+
+.theme-icon.is-visible {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+/* ── Botón hamburguesa (oculto en desktop) ── */
+.navbar__burger {
+  display: none;
+  position: relative;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 180ms ease;
+}
+
+.navbar__burger:hover {
+  border-color: var(--color-primary);
+}
+
+.burger-icon {
+  position: absolute;
+  color: var(--color-text);
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.burger-icon--menu {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.burger-icon--menu.is-hidden {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+.burger-icon--close {
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+
+.burger-icon--close.is-visible {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+/* ── Panel de navegación móvil ── */
+.navbar__mobile-panel {
+  display: none;
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 1.5rem 1.5rem;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  transform: translateY(-8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 220ms ease, opacity 220ms ease;
+}
+
+.navbar__mobile-panel.is-open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.navbar__mobile-panel .navbar__link {
+  padding: 0.75rem 0.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.navbar__mobile-panel .navbar__link:last-child {
+  border-bottom: none;
+}
+
+/* ── Selector de idioma ── */
+.lang-selector {
+  position: relative;
+}
 
 .lang-selector__btn {
   display: flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.4rem;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 8px;
@@ -83,11 +197,17 @@
   transition: border-color 180ms ease;
 }
 
-.lang-selector__btn:hover { border-color: var(--color-primary); }
+.lang-selector__btn:hover {
+  border-color: var(--color-primary);
+}
 
-.lang-selector__arrow {
-  font-size: 0.6rem;
+.lang-selector__arrow-icon {
   color: var(--color-text-muted);
+  transition: transform 200ms ease;
+}
+
+.lang-selector__arrow-icon.is-open {
+  transform: rotate(180deg);
 }
 
 .lang-selector__dropdown {
@@ -100,15 +220,21 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  min-width: 110px;
+  min-width: 130px;
   box-shadow: var(--shadow-md);
+  z-index: 10;
 }
 
 .lang-selector__option {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
   padding: 0.5rem 0.85rem;
   font-size: 0.875rem;
   color: var(--color-text-muted);
   cursor: pointer;
+  background: none;
+  border: none;
   text-align: left;
   transition: background 180ms ease, color 180ms ease;
 }
@@ -123,7 +249,30 @@
   font-weight: 600;
 }
 
+/* Bandera SVG — reemplaza a los emojis (no se renderizaban en Edge/Chrome Windows) */
+.lang-flag {
+  width: 18px;
+  height: 12px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 1px var(--color-border);
+}
+
+/* ── Responsive ── */
 @media (max-width: 640px) {
-  .navbar__links { display: none; }
-  .navbar { padding: 0 1rem; }
+  .navbar__links {
+    display: none;
+  }
+
+  .navbar__burger {
+    display: inline-flex;
+  }
+
+  .navbar__mobile-panel {
+    display: flex;
+  }
+
+  .navbar {
+    padding: 0 1rem;
+  }
 }

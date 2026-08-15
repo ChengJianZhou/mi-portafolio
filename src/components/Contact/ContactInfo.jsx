@@ -1,3 +1,4 @@
+import { IconBrandGithub, IconBrandLinkedin } from "@tabler/icons-react";
 import { useLang } from "../../context/LangContext";
 import { contact } from "../../data/contact";
 import cv from "../../assets/cv/curriculum Chengjian Zhou.pdf";
@@ -6,13 +7,13 @@ const SOCIAL_LINKS = [
   {
     key: "github",
     href: "https://github.com/ChengJianZhou",
-    icon: "github-icon",
+    Icon: IconBrandGithub,
     label: "GitHub",
   },
   {
     key: "linkedin",
     href: "https://www.linkedin.com/in/chengjian-zhou",
-    icon: "social-icon",
+    Icon: IconBrandLinkedin,
     label: "LinkedIn",
   },
 ];
@@ -42,9 +43,12 @@ export function ContactInfo() {
               className="contact-social-link"
               aria-label={social.label}
             >
-              <svg className="contact-social-icon" aria-hidden="true">
-                <use href={`/icons.svg#${social.icon}`} />
-              </svg>
+              <social.Icon
+                className="contact-social-icon"
+                size={20}
+                stroke={1.8}
+                aria-hidden="true"
+              />
               <span>{social.label}</span>
             </a>
           ))}

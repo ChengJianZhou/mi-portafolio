@@ -100,6 +100,13 @@
   width: 20px;
   height: 20px;
   flex-shrink: 0;
+  color: var(--color-text-muted);
+  transition: transform 200ms ease, color 200ms ease;
+}
+
+.contact-social-link:hover .contact-social-icon {
+  transform: translateY(-2px) scale(1.1);
+  color: var(--color-primary);
 }
 
 .contact-availability {

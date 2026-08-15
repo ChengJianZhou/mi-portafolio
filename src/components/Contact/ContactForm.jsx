@@ -27,6 +27,14 @@ export function ContactForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Validación local, alineada con las reglas reales del backend
+    // (subject y body deben cumplir longitud mínima, from debe ser email válido)
+    if (values.message.trim().length < 5) {
+      setStatus(STATUS.ERROR);
+      return;
+    }
+
     setStatus(STATUS.SENDING);
 
     const formData = new FormData();
@@ -65,6 +73,7 @@ export function ContactForm() {
           name="name"
           type="text"
           required
+          minLength={2}
           placeholder={f.namePlaceholder}
           value={values.name}
           onChange={handleChange}
@@ -96,6 +105,7 @@ export function ContactForm() {
           id="message"
           name="message"
           required
+          minLength={5}
           rows={5}
           placeholder={f.messagePlaceholder}
           value={values.message}

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useLang } from '../../context/LangContext'
 import { home } from '../../data/home'
 import '../../styles/Hero.css'
@@ -24,8 +25,8 @@ export function Hero() {
         <p className="hero__desc">{h.desc}</p>
 
         <div className="hero__cta">
-          <button className="btn btn-solid">{h.cta_primary}</button>
-          <button className="btn btn-outline">{h.cta_secondary}</button>
+          <Link to="/projects" className="btn btn-solid">{h.cta_primary}</Link>
+          <Link to="/contact" className="btn btn-outline">{h.cta_secondary}</Link>
         </div>
 
         <div className="hero__stack">
